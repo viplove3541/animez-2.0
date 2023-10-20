@@ -12,8 +12,8 @@
     "framer-motion": "^10.16.4",
     "hls.js": "^1.4.12",
     "p-queue": "^7.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "18.2",
+    "react-dom": "18.2",
     "react-icons": "^4.11.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-query": "^3.39.3",
@@ -45,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3"
   }
 }
