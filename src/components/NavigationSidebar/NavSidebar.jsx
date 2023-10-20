@@ -91,6 +91,7 @@ export default function NavSidebar(props) {
             </li>
           </ul>
         </div>
+        
       </div>
     </div>
   );
