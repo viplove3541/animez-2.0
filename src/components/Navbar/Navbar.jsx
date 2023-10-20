@@ -17,7 +17,12 @@ export default function NavBar(props) {
     const { name, value } = event.target;
     setSearchForm((prev) => ({ ...prev, [name]: value }));
   }
-  const handleKeyPress = (event) => {};
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      window.location.href = `/search?name=${searchForm?.name}&parameter=title`;
+      setSearchForm({ name: "" });
+    }
+  };
   useEffect(() => {
     function handleChange() {
       setScreenWidth(window.innerWidth);
