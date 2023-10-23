@@ -18,7 +18,11 @@ const jikanQueue = new PQueue({
 const baseURL = "https://api.jikan.moe/v4/";
 export async function queueRequest(endpoint) {
   return jikanQueue.add(async () => {
-    // console.log(endpoint + " *** executed  at: ***" + getCurrentTime());
-    return await axios.get(`${baseURL + endpoint}`).catch((error) => {});
+    try {
+      const response = await axios.get(`${baseURL + endpoint}`);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
   });
 }

@@ -16,7 +16,7 @@ export default function GenreSidebar() {
         }}
       />
       <div
-        className=" main-container d-flex  "
+        className="main-container d-flex"
         style={
           window.innerWidth < 1081 ? { flexDirection: "column-reverse" } : {}
         }

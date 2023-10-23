@@ -23,7 +23,7 @@ export default function Actions({ isInSidebar }) {
           rel="noreferrer"
         >
           <FaBroadcastTower size={20} />
-          <p>Watch Togather</p>
+          <p>Watch Together</p>
         </a>
       </span>
       <span>

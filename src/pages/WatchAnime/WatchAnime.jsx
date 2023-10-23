@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import HlsVideoPlayer from "./HlsVideoPlayer";
@@ -8,7 +8,8 @@ import loadingImage from "../../media/placeholder.gif";
 import RecommendedTopTen from "../../Layouts/RecommendedTopTen";
 import Share from "../../components/Share/Share";
 import LoadingSpinner from "../../components/LoadingSpinner";
-import { easeInOut, easeOut, motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
+
 
 import Error from "../../components/AnimeNotFound/Error";
 import {

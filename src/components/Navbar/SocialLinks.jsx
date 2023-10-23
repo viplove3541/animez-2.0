@@ -1,47 +1,47 @@
 import React from "react";
 import {
-  FaDiscord,
-  FaRedditAlien,
-  FaTelegramPlane,
-  FaTwitter,
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaFacebookF,
 } from "react-icons/fa";
 export default function SocialLinks() {
   return (
     <div className="social-links-wrapper">
       <span
-        style={{ backgroundColor: "#6f85d5" }}
+        style={{ backgroundColor: "#000000" }}
         className="d-flex a-center j-center"
       >
         <a
-          href="https://discord.com/invite/RRaf5JkkKu"
+          href="https://github.com/viplove3541"
           target="_blank"
           rel="noreferrer"
         >
-          <FaDiscord size={22} />
+          <FaGithub size={22} />
         </a>
       </span>
       <span
-        style={{ backgroundColor: "#ff3c1f" }}
+        style={{ backgroundColor: "#0072b1" }}
         className="d-flex a-center j-center"
       >
         <a
-          href="https://www.reddit.com/r/AniWatchZone/"
+          href="https://www.linkedin.com/in/viplove-kale-42032283/"
           target="_blank"
           rel="noreferrer"
         >
-          <FaRedditAlien size={22} />
+          <FaLinkedin size={22} />
         </a>
       </span>
       <span
-        style={{ backgroundColor: "#08c" }}
+        style={{ backgroundColor: "#fd1d1d" }}
         className="d-flex a-center j-center"
       >
         <a
-          href="https://t.me/+6pPzElOP7rc4ZGI1"
+          href="https://www.instagram.com/viplove_18/"
           target="_blank"
           rel="noreferrer"
         >
-          <FaTelegramPlane size={22} />
+          <FaInstagram size={22} />
         </a>
       </span>
       <span
@@ -49,11 +49,11 @@ export default function SocialLinks() {
         className="d-flex a-center j-center"
       >
         <a
-          href="https://twitter.com/AniWatchGo"
+          href="https://www.facebook.com/viplove.kale1"
           target="_blank"
           rel="noreferrer"
         >
-          <FaTwitter size={22} />
+          <FaFacebookF size={22} />
         </a>
       </span>
     </div>

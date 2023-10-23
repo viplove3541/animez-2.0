@@ -2,14 +2,14 @@ import React, { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getTrendingAnime } from "../../api/kitsu";
+import { useGetTrendingAnime } from "../../api/kitsu";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./trending.css";
 import { Link } from "react-router-dom";
 import { easeInOut, easeOut, motion, useInView } from "framer-motion";
 export default function Trending() {
-  const { data } = getTrendingAnime();
+  const { data } = useGetTrendingAnime();
   const ref = useRef(null);
   const isInView = useInView(ref);
   const animeCard = data?.map((el, idx) => {

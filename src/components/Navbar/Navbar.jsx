@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import logo from "../../media/logo.png";
-import profileIcon from "../../media/profile.jpg";
 import { Link } from "react-router-dom";
-import { FaSearch, FaBars, FaBell } from "react-icons/fa";
+import { FaSearch, FaBars} from "react-icons/fa";
 
 import Actions from "./Actions";
 import SocialLinks from "./SocialLinks";
@@ -18,7 +17,12 @@ export default function NavBar(props) {
     const { name, value } = event.target;
     setSearchForm((prev) => ({ ...prev, [name]: value }));
   }
-  const handleKeyPress = (event) => {};
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      window.location.href = `/search?name=${searchForm?.name}&parameter=title`;
+      setSearchForm({ name: "" });
+    }
+  };
   useEffect(() => {
     function handleChange() {
       setScreenWidth(window.innerWidth);
@@ -45,7 +49,7 @@ export default function NavBar(props) {
                 src={logo}
                 className="logo"
                 alt="logo"
-                onClick={() => scrollTo({ top: 0 })}
+                onClick={() => window.scrollTo({ top: 0 })}
               />
             </Link>
           </div>
@@ -85,8 +89,7 @@ export default function NavBar(props) {
 
           {/* <FaFilter className="filter-icon search-icons" size={20} color="grey" /> */}
         </div>
-        <SocialLinks />
-        <Actions isInSidebar={false} />
+        
         <div className="user-profile-nots a-center j-center d-flex trans-c-03">
           {screenWidth < 1300 && (
             <FaSearch
@@ -95,9 +98,11 @@ export default function NavBar(props) {
               }}
             />
           )}
-
-          <FaBell size={20} />
-          <img className="profile-icon" src={profileIcon} alt="profile-icon" />
+          <SocialLinks />
+          <div></div>
+          <div></div>
+          <div></div>
+          <Actions isInSidebar={false} />
         </div>
       </nav>
       {floatSearchIsVisible && (
