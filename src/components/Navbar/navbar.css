@@ -1,5 +1,5 @@
 .navigation-bar {
-  position: fixed !important;
+  position: fixed;
   height: 65px;
   width: 100%;
   z-index: 11;
@@ -163,7 +163,7 @@
 @media screen and (max-width: 700px) {
   .navigation-bar {
     height: 50px;
-    background: var(--dark) !important;
+    background: var(--dark);
   }
 
   .logo {
@@ -173,3 +173,5 @@
     top: 50px;
   }
 }
+
+

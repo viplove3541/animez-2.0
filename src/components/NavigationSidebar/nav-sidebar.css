@@ -8,7 +8,8 @@
   bottom: 0;
   background: rgba(36, 36, 40, 0.8);
   backdrop-filter: blur(10px);
-  z-index: -1;
+  z-index: 9999; /* Increase z-index to prevent background scrolling */
+  overflow: hidden; /* Prevent scrolling when sidebar is open */
   transition: all 0.1s ease-in-out;
 }
 .close-menu {
