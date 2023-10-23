@@ -4,12 +4,12 @@ import "./AnimeInfo.css";
 import { easeOut, motion } from "framer-motion";
 import { FaEye, FaHeart, FaMedal, FaPlayCircle, FaPlus } from "react-icons/fa";
 import Share from "../Share/Share";
-import { useGetAnimeById } from "../../api/kitsu";
+import { getAnimeById } from "../../api/kitsu";
 import { Link, useParams } from "react-router-dom";
 
 export default function Details() {
   const params = useParams();
-  const { data, isLoading } = useGetAnimeById(params.id);
+  const { data, isLoading } = getAnimeById(params.id);
   const [descIsCollapsed, setDescIsCollapsed] = useState(true);
   return (
     <motion.div

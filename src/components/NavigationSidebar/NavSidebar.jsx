@@ -7,13 +7,6 @@ export default function NavSidebar(props) {
   function scrollToTop() {
     window.scrollTo({ top: 0 });
   }
-  React.useEffect(() => {
-    if (props.sidebarIsOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [props.sidebarIsOpen]);
   return (
     <div
       className="navigation-sidebar f-poppins"
@@ -98,7 +91,6 @@ export default function NavSidebar(props) {
             </li>
           </ul>
         </div>
-        
       </div>
     </div>
   );

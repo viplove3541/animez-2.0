@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./card.css";
 import { Link } from "react-router-dom";
+import MouseOverCard from "./MouseOverCard";
 import { FaPlayCircle } from "react-icons/fa";
 import { easeOut, motion, useInView } from "framer-motion";
-
 export default function Card(props) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef);
@@ -11,7 +11,6 @@ export default function Card(props) {
   const anime = props.data;
   const [isHovered, setIsHovered] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  
   useEffect(() => {
     const setWidth = () => {
       setScreenWidth(window.innerWidth);
@@ -75,6 +74,9 @@ export default function Card(props) {
           </div>
         </div>
       </Link>
+      {screenWidth > 1150 && isHovered && anime && (
+        <MouseOverCard id={anime.mal_id} />
+      )}
     </motion.div>
   );
 }

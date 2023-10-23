@@ -20,7 +20,7 @@ const queryConfig = {
   staleTime: 2.1 * 60 * 1000,
 };
 
-const ExecuteQuery = (queryKey, endpoint) => {
+function executeQuery(queryKey, endpoint) {
   return useQuery(
     queryKey,
     async () => {
@@ -28,10 +28,10 @@ const ExecuteQuery = (queryKey, endpoint) => {
     },
     queryConfig
   );
-};
+}
 
 export function handleJikanResponse(queryKey, endpoint, backupData) {
-  const res = ExecuteQuery(queryKey, endpoint);
+  const res = executeQuery(queryKey, endpoint);
   const data =
     res.isError || res.data === undefined ? backupData : res.data?.data;
   return { data: data, isLoading: res.isLoading };

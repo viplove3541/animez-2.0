@@ -9,13 +9,13 @@ import {
   FaPlayCircle,
 } from "react-icons/fa";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { useGetRecentAnime } from "../../api/kitsu";
+import { getRecentAnime } from "../../api/kitsu";
 import LoadingSpinner from "../LoadingSpinner";
 import { Link } from "react-router-dom";
 import { easeInOut, easeOut, motion } from "framer-motion";
 
 export default function Hero() {
-  const { isLoading, data } = useGetRecentAnime();
+  const { isLoading, data } = getRecentAnime();
 
   const heroSlide = data?.map((el, idx) => {
     const item = el.attributes;

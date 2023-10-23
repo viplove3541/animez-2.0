@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./top-ten.css";
-import { useGetTrendingAnime } from "../../api/kitsu";
+import { getTrendingAnime } from "../../api/kitsu";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { easeOut, motion } from "framer-motion";
@@ -9,7 +9,7 @@ export default function TopTenAnime() {
   const ref = useRef(null);
   const containerInView = useAnimationOnce(ref);
 
-  const { data } = useGetTrendingAnime();
+  const { data } = getTrendingAnime();
   const [period, setPeriod] = useState(2);
   const animeList = data && [...data];
   const sortedList = animeList?.sort(

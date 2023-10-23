@@ -4,17 +4,28 @@ import logo from "../../media/logo.png";
 import SocialLinks from "../Navbar/SocialLinks";
 import { Link } from "react-router-dom";
 export default function Footer() {
-  const alphabets = Array.from({length: 26}, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i));
-  const links = alphabets.map((el) => (
-    <Link
-      to={`/search?name=${el}&parameter=letter`}
-      key={el}
-      className="alphabet-tile"
-      onClick={() => window.scrollTo({ top: 0 })}
-    >
-      {el}
-    </Link>
-  ));
+  function getAlphabets() {
+    const alphabets = [];
+    const startChar = "A".charCodeAt(0);
+    const endChar = "Z".charCodeAt(0);
+    for (let i = startChar; i <= endChar; i++) {
+      alphabets.push(String.fromCharCode(i));
+    }
+    const links = alphabets.map((el) => {
+      return (
+        <Link
+          to={`/search?name=${el}&parameter=letter`}
+          key={el}
+          className="alphabet-tile"
+          onClick={() => window.scrollTo({ top: 0 })}
+        >
+          {el}
+        </Link>
+      );
+    });
+    return [...links];
+  }
+  const links = getAlphabets();
 
   return (
     <div className="footer-container d-flex-fd-column j-center">
@@ -35,12 +46,11 @@ export default function Footer() {
       <div className="alphabet-list d-flex">{links}</div>
       <div className="copyright-text">
         <p>
-          <strong><a href="#">AnimeZ</a></strong> Stream for free without ads! The source code is by <a
-          target="_blank" rel="noopener noreferrer" href="https://github.com/viplove3541">Viplove Kale</a>. Credits to Jikan and Kitsu for the API.
+          AnimeZ does not store any files on our server; we only link to the
+          media which is hosted on 3rd party services.
         </p>
-        <p>&copy; {new Date().getFullYear()} AnimeZ All rights reserved.</p>
+        <p>&copy; Kaido All rights reserved.</p>
       </div>
     </div>
   );
 }
-

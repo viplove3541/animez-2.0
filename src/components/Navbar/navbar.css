@@ -1,5 +1,5 @@
 .navigation-bar {
-  position: fixed;
+  position: fixed !important;
   height: 65px;
   width: 100%;
   z-index: 11;
@@ -9,7 +9,7 @@
   gap: 40px;
 }
 .navigation-bar.dark {
-  background-color:#003060;
+  background-color: #6f42c1;
   box-shadow: 1px 4px 10px black;
 }
 
@@ -163,7 +163,7 @@
 @media screen and (max-width: 700px) {
   .navigation-bar {
     height: 50px;
-    background: var(--dark);
+    background: var(--dark) !important;
   }
 
   .logo {
@@ -173,5 +173,3 @@
     top: 50px;
   }
 }
-
-

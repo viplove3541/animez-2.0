@@ -14,12 +14,8 @@
   padding-block: 10px;
 }
 
-a{
-  color: var(--theme);
-}
-
 .help-text {
-  align-items: center;
+  align-items: flex-end;
 }
 .alphabet-tile {
   text-align: center;
@@ -37,5 +33,4 @@ a{
 }
 .copyright-text {
   color: grey;
-  text-align: center;
 }

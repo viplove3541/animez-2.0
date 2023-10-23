@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { servers } from "../api/gogoanime_servers";
-export const useHandleConsumetResponse = (endpoint, parameter) => {
+function handleConsumetResponse(endpoint, parameter) {
   const BASE_URL = "https://kaidoapi.vercel.app/anime/gogoanime";
   const results = useQuery(`${endpoint}${parameter}`, async () => {
     if (parameter) {
@@ -27,7 +27,7 @@ export const useHandleConsumetResponse = (endpoint, parameter) => {
  */
 
 export function useSearch(name) {
-  const searchResults = useHandleConsumetResponse("/", name);
+  const searchResults = handleConsumetResponse("/", name);
   const results = searchResults.data?.results;
 
   let subAnime, dubAnime;
@@ -92,13 +92,13 @@ export function useSearch(name) {
 }
 
 export function useAnimeInfo(id) {
-  const results = useHandleConsumetResponse(`/info/`, id);
+  const results = handleConsumetResponse(`/info/`, id);
   if (!results.isLoading && results.data) {
     return results.data;
   }
 }
 export function useServers(episodeId) {
-  const results = useHandleConsumetResponse(`/servers/`, episodeId);
+  const results = handleConsumetResponse(`/servers/`, episodeId);
 
   if (!results.isLoading && results.data) {
     const usableServers = [];
@@ -116,7 +116,7 @@ export function useServers(episodeId) {
 }
 
 export function useEpisodeFiles({ server, id }) {
-  const results = useHandleConsumetResponse(
+  const results = handleConsumetResponse(
     "/watch/",
     server && id ? `${id}?server=${server.id}` : null
   );
@@ -129,5 +129,3 @@ export function useEpisodeFiles({ server, id }) {
     return { isLoading: results.isLoading };
   }
 }
-
-
