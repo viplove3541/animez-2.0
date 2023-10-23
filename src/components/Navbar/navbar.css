@@ -22,7 +22,7 @@
   color: var(--theme);
 }
 .logo {
-  height: 40px;
+  height: 60px;
   margin-inline: 10px;
 }
 
@@ -167,7 +167,7 @@
   }
 
   .logo {
-    height: 30px;
+    height: 40px;
   }
   .floating-search-wrapper {
     top: 50px;
