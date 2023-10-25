@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT [othneildrew] SHIELDS -->
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/viplove3541/movielogy">
+    <img src="https://fontmeme.com/permalink/230629/6946c78f40c869544bab3a4667c4dc98.png" alt="Movielogy" width="252" height="85">
+  </a>
 
-In the project directory, you can run:
+  <h2 align="center">Movielogy - Viplove Kale</h2>
 
-### `npm start`
+  <p align="center">
+    Movielogy - AI Powered Movie App [React.js, Material UI, Alan AI]
+    <br />
+    <a href="https://github.com/viplove3541/movielogy"><strong>Explore the project »</strong></a>
+    <br />
+    <br />
+    <a href="https://movielogy-viplove3541.netlify.app/">View Demo Site</a>
+    .
+    ·
+    <a href="https://github.com/viplove3541/movielogy/issues">Request Feature</a>
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![Product Name Screen Shot][product-screenshot]]("https://movielogy-viplove3541.netlify.app/")
 
-### `npm test`
+Movielogy combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Anime Library**: Browse and search for a wide range of anime series and movies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Anime Details**: Get detailed information about each anime, including synopsis, genres, release date, and more.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Streaming**: Stream anime episodes and movies directly from the website.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **User-friendly**: Kaido is designed with a user-friendly interface to enhance your viewing experience.
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React**: The website is built using the React JavaScript library for creating dynamic user interfaces.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React Router**: React Router is used for handling client-side routing and navigation within the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React Query**: React Query is used for efficient data fetching and state management.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **p-queue**: p-queue is utilized to manage concurrent API requests efficiently.
 
-## Learn More
+- **Node.js Library**: This website uses a Node.js library for consuming data from various publicly available anime APIs.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Jikan REST API**: Jikan is used to retrieve anime information, including details about episodes, genres, and more.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Kitsu API**: The Kitsu API provides additional data and information about anime titles.
