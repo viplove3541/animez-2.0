@@ -29,7 +29,7 @@
 
 [![Product Name Screen Shot][product-screenshot]]("https://movielogy-viplove3541.netlify.app/")
 
-Movielogy combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
+Welcome to AnimeZ an ad-free Anime streaming website, the anime enthusiast's dream come true! AnimeZ dedicated to providing you with the best and most immersive anime-watching experience. AnimeZ is powered by cutting-edge technology, featuring the React JS framework, and it seamlessly integrates the Jikan API and Kitsu API to bring you the latest and greatest in the world of anime.
 
 ## Features
 
