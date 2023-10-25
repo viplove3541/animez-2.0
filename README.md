@@ -6,7 +6,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/viplove3541/animez-2.0">
-    <img src="https://fontmeme.com/permalink/230629/6946c78f40c869544bab3a4667c4dc98.png" alt="Movielogy" width="252" height="85">
+   ![image](https://github.com/viplove3541/animez-2.0/assets/80448124/e7cf02a4-20fb-47c9-a3a9-eba2f6c47a2c)
+
   </a>
 
   <h2 align="center">AnimeZ- Viplove Kale</h2>
