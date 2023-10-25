@@ -28,8 +28,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]("https://animez-viplove0908.vercel.app/")
-
 Welcome to AnimeZ an ad-free Anime streaming website, the anime enthusiast's dream come true! AnimeZ dedicated to providing you with the best and most immersive anime-watching experience. AnimeZ is powered by cutting-edge technology, featuring the React JS framework, and it seamlessly integrates the Jikan API and Kitsu API to bring you the latest and greatest in the world of anime.
 
 ## Features
