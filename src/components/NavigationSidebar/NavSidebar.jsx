@@ -3,6 +3,8 @@ import { FaChevronLeft, FaComments } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./nav-sidebar.css";
 import Actions from "../Navbar/Actions";
+import SocialLinks from "../Navbar/SocialLinks";
+import Footer from "../Footer/Footer";
 export default function NavSidebar(props) {
   function scrollToTop() {
     window.scrollTo({ top: 0 });
@@ -97,8 +99,16 @@ export default function NavSidebar(props) {
               </Link>
             </li>
           </ul>
+          
         </div>
-        
+        <SocialLinks/>
+        <div className="copyright-text">
+        <p>
+          <strong><a href="#">AnimeZ</a></strong> Stream for free without ads! The source code is by <a
+          target="_blank" rel="noopener noreferrer" href="https://github.com/viplove3541">Viplove Kale</a>. Credits to Jikan and Kitsu for the API.
+        </p>
+        <p>&copy; {new Date().getFullYear()} AnimeZ All rights reserved.</p>
+      </div>
       </div>
     </div>
   );
