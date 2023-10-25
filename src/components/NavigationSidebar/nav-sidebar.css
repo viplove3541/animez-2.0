@@ -17,7 +17,7 @@
 }
 .navigation-list {
   position: fixed;
-  top: 1;
+  top: 0;
   left: -250px;
   width: 250px;
   height: 100vh;
