@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/viplove3541/animez-2.0">
-   ![image](https://github.com/viplove3541/animez-2.0/assets/80448124/e7cf02a4-20fb-47c9-a3a9-eba2f6c47a2c)
+  <img src="https://fontmeme.com/permalink/231025/0c0c7d0634ab6912d0e738c5586a0e7d.png" alt="AnimeZ" width="252" height="85">
 
   </a>
 
