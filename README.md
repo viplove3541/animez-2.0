@@ -5,7 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/viplove3541/movielogy">
+  <a href="https://github.com/viplove3541/animez-2.0">
     <img src="https://fontmeme.com/permalink/230629/6946c78f40c869544bab3a4667c4dc98.png" alt="Movielogy" width="252" height="85">
   </a>
 
@@ -14,13 +14,13 @@
   <p align="center">
     AnimeZ - Free Anime Streaming App [React.js]
     <br />
-    <a href="https://github.com/viplove3541/movielogy"><strong>Explore the project »</strong></a>
+    <a href="https://github.com/viplove3541/animez-2.0"><strong>Explore the project »</strong></a>
     <br />
     <br />
     <a href="https://movielogy-viplove3541.netlify.app/">View Demo Site</a>
     .
     ·
-    <a href="https://github.com/viplove3541/movielogy/issues">Request Feature</a>
+    <a href="https://github.com/viplove3541/animez-2.0/issues">Request Feature</a>
   </p>
 </div>
 
