@@ -1,7 +1,10 @@
+/* Styling for the watch container */
 .watch-container {
   position: relative;
   padding: 20px;
 }
+
+/* Background image for the watch container */
 .watch-container-background {
   position: absolute;
   z-index: -1;
@@ -11,6 +14,8 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Overlay with backdrop-filter and semi-transparent background */
 .watch-container::after {
   content: "";
   position: absolute;
@@ -22,15 +27,20 @@
   background: rgba(93, 93, 93, 0.701);
   z-index: -1;
 }
+/* Styling for the media center */
 .media-center {
   width: 75%;
   background-color: var(--dark);
   padding-bottom: 20px;
 }
+
+/* Styling for the episode container */
 .episode-container {
   width: 25%;
   padding: 20px;
 }
+
+/* Styling for the episode tiles wrapper */
 .episode-tiles-wrapper {
   flex-wrap: wrap;
   margin-top: 5px;
@@ -41,12 +51,15 @@
   max-height: 520px;
   overflow-y: auto;
 }
+
+/* Styling for the current anime details */
 .current-anime-details {
   width: 25%;
   padding: 20px;
-
   overflow-y: auto;
 }
+
+/* Styling for images within current anime details */
 .current-anime-details img {
   width: 200px;
   margin: auto;
@@ -119,6 +132,10 @@ select:enabled {
   font-size: 14px;
 }
 
+
+/* Media queries for responsive design */
+
+ /* Adjustments for screens with a maximum width of 1400px */
 @media screen and (max-width: 1400px) {
   .watch-container {
     flex-direction: column;
@@ -137,6 +154,8 @@ select:enabled {
     margin: auto;
   }
 }
+
+ /* Adjustments for screens with a maximum width of 1100px */
 @media screen and (max-width: 1100px) {
   .watch-container {
     padding: 0;
@@ -163,6 +182,8 @@ select:enabled {
     padding: 10px;
   }
 }
+
+/* Adjustments for screens with a maximum width of 1000px */
 @media screen and (max-width: 1000px) {
   .episode-container {
     width: 100%;
@@ -171,6 +192,8 @@ select:enabled {
     width: 100%;
   }
 }
+
+/* Adjustments for screens with a maximum width of 580px */
 @media screen and (max-width: 580px) {
   .episode-tile {
     width: calc(100% / 6 - 5px);

@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { servers } from "../api/gogoanime_servers";
+
+// Define a custom hook for handling API consumption and responses
 export const useHandleConsumetResponse = (endpoint, parameter) => {
   const BASE_URL = "https://kaidoapi.vercel.app/anime/gogoanime";
+  // Use the 'useQuery' hook to fetch data from the specified API endpoint
   const results = useQuery(`${endpoint}${parameter}`, async () => {
     if (parameter) {
       return await axios
@@ -10,9 +13,13 @@ export const useHandleConsumetResponse = (endpoint, parameter) => {
         .catch((err) => console.log(err));
     }
   });
+
+  // If there's no parameter provided, return an object indicating loading state
   if (!parameter) {
     return { isLoading: true };
   }
+
+   // Return an object containing loading state, error state, and the retrieved data
   return {
     isLoading: results.isLoading,
     isError: results.isError,
@@ -21,8 +28,8 @@ export const useHandleConsumetResponse = (endpoint, parameter) => {
 }
 
 /**
- *
- * @param  name
+ * Search for anime by name using the API.
+ * @param  name - The name of the anime to search for.
  * @returns an object containing loading and error states from the query and data retrieved
  */
 
@@ -92,17 +99,21 @@ export function useSearch(name) {
 }
 
 export function useAnimeInfo(id) {
+   // Use the 'useHandleConsumetResponse' function to fetch anime information.
   const results = useHandleConsumetResponse(`/info/`, id);
+    // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     return results.data;
   }
 }
 export function useServers(episodeId) {
+    // Use the 'useHandleConsumetResponse' function to fetch available servers.
   const results = useHandleConsumetResponse(`/servers/`, episodeId);
-
+  // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     const usableServers = [];
 
+     // Iterate through the 'servers' list and match with available server data.
     for (let i = 0; i < servers.length; i++) {
       for (let j = 0; j < results.data.length; j++) {
         if (servers[i].name === results.data[j].name) {
@@ -110,16 +121,19 @@ export function useServers(episodeId) {
         }
       }
     }
-
+   // Return the list of usable servers.
     return usableServers;
   }
 }
 
+// * Fetch episode files for a specific server and episode ID.
 export function useEpisodeFiles({ server, id }) {
+   // Use the 'useHandleConsumetResponse' function to fetch episode files.
   const results = useHandleConsumetResponse(
     "/watch/",
     server && id ? `${id}?server=${server.id}` : null
   );
+   // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     return {
       sources: results.data.sources,

@@ -132,6 +132,7 @@ export default function WatchAnime() {
           transition={{ duration: 0.5, ease: easeOut }}
         >
           <img
+          alt=""
             className="watch-container-background"
             src={subIsSelected ? subInfo?.image : dubInfo?.image}
           />
@@ -157,6 +158,7 @@ export default function WatchAnime() {
                     style={{ height: "100%" }}
                   >
                     <img
+                    alt=""
                       src={loadingImage}
                       style={{
                         display: "block",
@@ -200,6 +202,7 @@ export default function WatchAnime() {
                       serverButtons
                     ) : (
                       <img
+                      alt=""
                         src={loadingImage}
                         style={{ height: 100, width: 100 }}
                       />
@@ -226,11 +229,13 @@ export default function WatchAnime() {
           </div>
           <div className="current-anime-details ">
             <img
+            alt=""
               className="details-container-background"
               src={subIsSelected ? subInfo.image : dubInfo.image || "NA"}
             />
             <div className="anime-details d-flex-fd-column">
               <img
+              alt=""
                 className="anime-details-poster"
                 src={subIsSelected ? subInfo.image : dubInfo.image || "NA"}
               />

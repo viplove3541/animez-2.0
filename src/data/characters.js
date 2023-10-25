@@ -1,43 +1,46 @@
+// Define a data object containing information about anime characters.
 const data = {
   pagination: {
-    last_visible_page: 13778,
-    has_next_page: true,
-    current_page: 1,
+    last_visible_page: 13778, // The last visible page number
+    has_next_page: true, // Indicates if there is a next page
+    current_page: 1, // The current page number
     items: {
-      count: 5,
-      total: 68890,
-      per_page: 5,
+      count: 5, // Number of items on the current page
+      total: 68890, // Total number of items
+      per_page: 5, // Number of items per page
     },
   },
   data: [
     {
-      mal_id: 417,
-      url: "https://myanimelist.net/character/417/Lelouch_Lamperouge",
+      // Character information
+      mal_id: 417, // MyAnimeList character ID
+      url: "https://myanimelist.net/character/417/Lelouch_Lamperouge", // Character's profile URL
       images: {
         jpg: {
           image_url:
-            "https://cdn.myanimelist.net/images/characters/8/406163.jpg",
+            "https://cdn.myanimelist.net/images/characters/8/406163.jpg", // Character's image URL (JPEG format)
         },
         webp: {
           image_url:
-            "https://cdn.myanimelist.net/images/characters/8/406163.webp",
+            "https://cdn.myanimelist.net/images/characters/8/406163.webp", // Character's image URL (WebP format)
           small_image_url:
-            "https://cdn.myanimelist.net/images/characters/8/406163t.webp",
+            "https://cdn.myanimelist.net/images/characters/8/406163t.webp", // Small version of the character's image (WebP format)
         },
       },
-      name: "Lelouch Lamperouge",
-      name_kanji: "ルルーシュ・ランペルージ",
+      name: "Lelouch Lamperouge", // Character's name
+      name_kanji: "ルルーシュ・ランペルージ", // Character's name in Kanji
       nicknames: [
         "Lelouch vi Britannia",
         "Zero",
         "Lulu",
         "Black Prince",
         "The Demon Emperor",
-      ],
-      favorites: 165270,
+      ], // List of character nicknames
+      favorites: 165270, // Number of users who favorited this character
       about:
-        "Age: 17 (first season), 18 (second season)\nBirthdate:  December 5, 1999 a.t.b. (Sagittarius)\nBlood Type: A\nNationality: Britannia\nHeight: 178 cm (5'10\")\nWeight: 56 kg (123 lbs)\nOccupation: Student, Terrorist, Knightmare Pilot, Politician, Emperor, Prince\nAllegiance: Order of the Black Knights\nPosition: Leader of the Black Knights\nKnightmare: Sutherland, Burai, Gawain, Shinkirou\n\nLelouch is the main protagonist of the anime/manga series Code Geass. He is the Eleventh Prince of the Holy Britannian Empire and the son of the 98th Emperor of Britannia, Charles zi Britannia.\n\nLelouch is a very clever individual who is also calm, sophisticated, and arrogant due to his aristocratic upbringing. While at school, Lelouch conducts himself as a friendly, likable, and often an easygoing student. However, this is a mask to hide his true nature. While as Zero, his true nature is expressed. His charisma and beliefs in justice gain him the trust and respect of many soldiers and leaders.\n\nHe is known for having a very stoic personality. He never cared about schoolwork, seeing the entire thing as trivial, even though his high intelligence would make it easy for him. He enjoys seeking out challenges, often playing chess against the nobility. In general, Lelouch takes most day-to-day affairs with open disinterest, often not even noticing the affection of others, especially Shirley, his classmate. He has a strong dislike for nobles, viewing them as tepid and \"overprivileged parasites.\"\n\nMany characters have noted that Lelouch is entirely selfish, as his desire to remake the world into what he wants it to become from his desire to avenge his mother's apparent death and Nunnally's sake. However, in time, he realizes that this goal is not just for them but also the entire world.\n\nDespite his cold, calculating demeanor and ruthlessness in battle, he can be a rather compassionate person to his friends and loved ones. To Nunnally, he is a loving older brother, and to Suzaku, a loyal friend, although the two are enemies. Lelouch, at first glance, seems to have relatively little concern for the well-being of his subordinates, but in reality, he does care about them, seeing them as valuable allies.\n\n\nBackground (as Lelouch):\n\nBackground (as Zero):\n\nFirst Season:\n\nSecond Season:\n\n\nGeass:\nLelouch's Geass, bestowed upon him by C.C., gives him \"The Power of Absolute Obedience,\" allowing him to plant commands within a person's mind upon eye contact in a manner comparable to hypnosis. Activation of his Geass is visually represented by the manifestation of a Geass Sigil in his left eye. Commands dictated are written into the minds of the designated targets, the Sigil projecting him from his eye to theirs.\n\n\nOf all the Geass abilities in the series, Lelouch's has been explored the most and also seems to have the most restrictions, and side effects of any Geass introduced:(Source: Code Geass Wiki, Villains Wiki, Heroes Wiki, Anime and Manga Universe Wiki)",
+        "Age: 17 (first season), 18 (second season)\nBirthdate:  December 5, 1999 a.t.b. (Sagittarius)\nBlood Type: A\nNationality: Britannia\nHeight: 178 cm (5'10\")\nWeight: 56 kg (123 lbs)\nOccupation: Student, Terrorist, Knightmare Pilot, Politician, Emperor, Prince\nAllegiance: Order of the Black Knights\nPosition: Leader of the Black Knights\nKnightmare: Sutherland, Burai, Gawain, Shinkirou\n\nLelouch is the main protagonist of the anime/manga series Code Geass. He is the Eleventh Prince of the Holy Britannian Empire and the son of the 98th Emperor of Britannia, Charles zi Britannia.\n\nLelouch is a very clever individual who is also calm, sophisticated, and arrogant due to his aristocratic upbringing. While at school, Lelouch conducts himself as a friendly, likable, and often an easygoing student. However, this is a mask to hide his true nature. While as Zero, his true nature is expressed. His charisma and beliefs in justice gain him the trust and respect of many soldiers and leaders.\n\nHe is known for having a very stoic personality. He never cared about schoolwork, seeing the entire thing as trivial, even though his high intelligence would make it easy for him. He enjoys seeking out challenges, often playing chess against the nobility. In general, Lelouch takes most day-to-day affairs with open disinterest, often not even noticing the affection of others, especially Shirley, his classmate. He has a strong dislike for nobles, viewing them as tepid and \"overprivileged parasites.\"\n\nMany characters have noted that Lelouch is entirely selfish, as his desire to remake the world into what he wants it to become from his desire to avenge his mother's apparent death and Nunnally's sake. However, in time, he realizes that this goal is not just for them but also the entire world.\n\nDespite his cold, calculating demeanor and ruthlessness in battle, he can be a rather compassionate person to his friends and loved ones. To Nunnally, he is a loving older brother, and to Suzaku, a loyal friend, although the two are enemies. Lelouch, at first glance, seems to have relatively little concern for the well-being of his subordinates, but in reality, he does care about them, seeing them as valuable allies.\n\n\nBackground (as Lelouch):\n\nBackground (as Zero):\n\nFirst Season:\n\nSecond Season:\n\n\nGeass:\nLelouch's Geass, bestowed upon him by C.C., gives him \"The Power of Absolute Obedience,\" allowing him to plant commands within a person's mind upon eye contact in a manner comparable to hypnosis. Activation of his Geass is visually represented by the manifestation of a Geass Sigil in his left eye. Commands dictated are written into the minds of the designated targets, the Sigil projecting him from his eye to theirs.\n\n\nOf all the Geass abilities in the series, Lelouch's has been explored the most and also seems to have the most restrictions, and side effects of any Geass introduced:(Source: Code Geass Wiki, Villains Wiki, Heroes Wiki, Anime and Manga Universe Wiki)", // Detailed information about the character
     },
+    // (Similar information for other characters)
     {
       mal_id: 45627,
       url: "https://myanimelist.net/character/45627/Levi",

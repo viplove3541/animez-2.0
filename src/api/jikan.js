@@ -1,25 +1,28 @@
-import { useQuery } from "react-query";
-import { queueRequest } from "./apiQueue";
-import { genreData } from "../data/genre";
+// Import the necessary libraries and data sources.
+import { useQuery } from "react-query"; // React Query library for managing asynchronous data
+import { queueRequest } from "./apiQueue"; // Queue for managing API requests
+import { genreData } from "../data/genre"; // Data source for genre information
 import {
   onaData,
   ovaData,
   specialsData,
   moviesData,
-} from "../data/mainSection";
+} from "../data/mainSection"; // Data sources for different anime categories
 import {
   favoriteData,
   topAiringData,
   upcoming,
   popularData,
-} from "../data/featured";
-import characterData from "../data/characters";
-import { animeReviewsData, mangaReviewsData } from "../data/reviews";
+} from "../data/featured"; // Data sources for featured anime
+import characterData from "../data/characters"; // Data source for anime characters
+import { animeReviewsData, mangaReviewsData } from "../data/reviews"; // Data sources for reviews
 
+// Configuration for query caching and stale time.
 const queryConfig = {
-  staleTime: 2.1 * 60 * 1000,
+  staleTime: 2.1 * 60 * 1000, // Cache data for 2.1 minutes
 };
 
+// Function for executing a query using the "useQuery" hook.
 const ExecuteQuery = (queryKey, endpoint) => {
   return useQuery(
     queryKey,
@@ -30,6 +33,7 @@ const ExecuteQuery = (queryKey, endpoint) => {
   );
 };
 
+// Functions to fetch various types of anime and manga data.
 export function handleJikanResponse(queryKey, endpoint, backupData) {
   const res = ExecuteQuery(queryKey, endpoint);
   const data =
@@ -37,6 +41,9 @@ export function handleJikanResponse(queryKey, endpoint, backupData) {
   return { data: data, isLoading: res.isLoading };
 }
 
+// Functions for fetching specific types of anime and manga data.
+// Each function calls handleJikanResponse with a specific queryKey, endpoint, and backupData.
+// These functions are used to fetch data for different sections or categories.
 export function getMangaReviews() {
   return handleJikanResponse(
     "top-manga-reviews",
