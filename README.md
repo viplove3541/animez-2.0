@@ -38,7 +38,9 @@ Welcome to AnimeZ an ad-free Anime streaming website, the anime enthusiast's dre
 
 - **Streaming**: Stream anime episodes and movies directly from the website.
 
-- **User-friendly**: Kaido is designed with a user-friendly interface to enhance your viewing experience.
+- **User-friendly**: AnimeZ is designed with a user-friendly interface to enhance your viewing experience.
+
+- **Ad-Free Viewing**: One of AnimeHub's standout features is its ad-free experience. Say goodbye to pop-ups and banner ads.
 
 ## Technologies Used
 
