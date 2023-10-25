@@ -57,3 +57,12 @@ Welcome to AnimeZ an ad-free Anime streaming website, the anime enthusiast's dre
 - **Jikan REST API**: Jikan is used to retrieve anime information, including details about episodes, genres, and more.
 
 - **Kitsu API**: The Kitsu API provides additional data and information about anime titles.
+
+ ## Author
+
+👤 **VIPLOVE KALE**
+
+- Github: [@viplove3541](https://github.com/viplove3541)
+- LinkedIn: [@viplove-kale-42032283](https://www.linkedin.com/in/viplove-kale-42032283/)
+
+Give a ⭐️ if this project helped you!
