@@ -63,7 +63,7 @@ export default function NavBar(props) {
             }
             type="text"
             className="search-text f-poppins  trans-03"
-            placeholder="Search anime..."
+            placeholder="What are you looking for?"
             name="name"
             value={searchForm?.name}
             onChange={(e) => handleSearchForm(e)}
@@ -110,7 +110,7 @@ export default function NavBar(props) {
           <input
             type="text"
             className="search-text f-poppins"
-            placeholder="Search anime..."
+            placeholder="What are you looking for?"
             name="name"
             value={searchForm?.name}
             onChange={(e) => handleSearchForm(e)}

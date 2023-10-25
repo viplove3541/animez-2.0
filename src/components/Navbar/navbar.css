@@ -123,7 +123,7 @@
 .floating-search-wrapper input {
   color: black;
   border: none;
-  background-color: var(--theme);
+  background-color: var(--grey-dark);
   padding: 10px 20px;
   border-radius: 30px;
 }
