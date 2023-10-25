@@ -40,7 +40,7 @@ Welcome to AnimeZ an ad-free Anime streaming website, the anime enthusiast's dre
 
 - **User-friendly**: AnimeZ is designed with a user-friendly interface to enhance your viewing experience.
 
-- **Ad-Free Viewing**: One of AnimeHub's standout features is its ad-free experience. Say goodbye to pop-ups and banner ads.
+- **Ad-Free Viewing**: One of AnimeZ standout features is its ad-free experience. Say goodbye to pop-ups and banner ads.
 
 ## Technologies Used
 
