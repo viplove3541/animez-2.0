@@ -1,129 +1,130 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { servers } from "../api/gogoanime_servers";
-
-// Define a custom hook for handling API consumption and responses
-export const useHandleConsumetResponse = (endpoint, parameter) => {
+function handleConsumetResponse(endpoint, parameter) {
   const BASE_URL = "https://api.consumet.manjotbenipal.xyz/anime/gogoanime";
-  
-  // Use the 'useQuery' hook to fetch data from the specified API endpoint
-  const results = useQuery([endpoint, parameter], async () => {
+  const results = useQuery(`${endpoint}${parameter}`, async () => {
     if (parameter) {
-      const response = await axios.get(`${BASE_URL}${endpoint}${parameter}`);
-      return response.data; // Return the data directly
+      return await axios
+        .get(`${BASE_URL}${endpoint}${parameter}`)
+        .catch((err) => console.log(err));
     }
-  }, {
-    enabled: !!parameter, // Only run the query if parameter is provided
-    retry: 3, // Retry failed requests up to 3 times
-    refetchOnWindowFocus: false, // Prevent refetching on window focus
   });
-
+  if (!parameter) {
+    return { isLoading: true };
+  }
   return {
     isLoading: results.isLoading,
     isError: results.isError,
-    data: results.data,
+    data: results.data?.data,
   };
-};
+}
 
 /**
- * Search for anime by name using the API.
- * @param  name - The name of the anime to search for.
+ *
+ * @param  name
  * @returns an object containing loading and error states from the query and data retrieved
  */
+
 export function useSearch(name) {
-  const searchResults = useHandleConsumetResponse("/", name);
+  const searchResults = handleConsumetResponse("/", name.toLowerCase());
+  console.log(name.toLowerCase());
   const results = searchResults.data?.results;
 
   let subAnime, dubAnime;
   if (results?.length === 0) {
     return { noAnime: true };
   }
-
+  /**
+   * if results only contain one item determine wheter its sub or dub
+   */
   if (results?.length === 1) {
-    if (results[0].id.endsWith("dub")) {
+    if (
+      results[0].id.slice(results[0].id.length - 3, results[0].id.length) ===
+      "dub"
+    ) {
       dubAnime = results[0];
     } else {
       subAnime = results[0];
     }
   }
-
+  console.log(results);
   if (results?.length > 1) {
-    if (!results[0].id.endsWith("dub")) {
+    const suffix_0 = results[0].id.slice(
+      results[0].id.length - 3,
+      results[0].id.length
+    );
+    /**
+     * if results.length is more than one
+     * if the first item is not dub->
+     * then set the subAnime=results[0]
+     *
+     * check if the second item is dub->
+     * if true set the dubAnime=results[1]
+     * else set dubAnime=null
+     *
+     * else check if first item dub->
+     *  if yes set dubAnime=results[0]
+     *  and subAnime=null
+     */
+    if (suffix_0 !== "dub") {
       subAnime = results[0];
-      if (results[1].id.endsWith("dub")) {
-        dubAnime = results[1];
-      }
-    } else {
+
+      dubAnime =
+        results.find((el) => el.id === subAnime.id + "-dub") || results[1];
+    } else if (suffix_0 === "dub") {
       dubAnime = results[0];
+      subAnime = results.find(
+        (el) => (el.id = dubAnime.id.slice(0, dubAnime.id.length - 4))
+      );
     }
   }
-
-  return {
-    dub: dubAnime,
-    sub: subAnime,
-    isLoading: searchResults.isLoading,
-    isError: searchResults.isError,
-  };
+  if (!searchResults.isLoading) {
+    return {
+      dub: dubAnime,
+      sub: subAnime,
+      isLoading: searchResults.isLoading,
+      isError: searchResults.isError,
+    };
+  }
 }
 
-/**
- * Fetch anime information by ID using the API.
- * @param  id - The ID of the anime.
- * @returns anime data or loading state.
- */
 export function useAnimeInfo(id) {
-  const results = useHandleConsumetResponse(`/info/`, id);
-  return {
-    isLoading: results.isLoading,
-    isError: results.isError,
-    data: results.data,
-  };
+  const results = handleConsumetResponse(`/info/`, id);
+  if (!results.isLoading && results.data) {
+    return results.data;
+  }
 }
-
-/**
- * Fetch available servers for a specific episode using the API.
- * @param  episodeId - The ID of the episode.
- * @returns list of usable servers or loading state.
- */
 export function useServers(episodeId) {
-  const results = useHandleConsumetResponse(`/servers/`, episodeId);
-  const usableServers = [];
+  const results = handleConsumetResponse(`/servers/`, episodeId);
 
   if (!results.isLoading && results.data) {
-    servers.forEach((server) => {
-      const matchedServer = results.data.find(
-        (apiServer) => apiServer.name === server.name
-      );
-      if (matchedServer) {
-        usableServers.push({ ...matchedServer, id: server.id });
-      }
-    });
-  }
+    const usableServers = [];
 
-  return {
-    usableServers,
-    isLoading: results.isLoading,
-    isError: results.isError,
-  };
+    for (let i = 0; i < servers.length; i++) {
+      for (let j = 0; j < results.data.length; j++) {
+        if (servers[i].name === results.data[j].name) {
+          usableServers.push({ ...results.data[j], id: servers[i].id });
+        }
+      }
+    }
+
+    return usableServers;
+  }
 }
 
-/**
- * Fetch episode files for a specific server and episode ID.
- * @param  server - The server object.
- * @param  id - The ID of the episode.
- * @returns episode sources or loading state.
- */
 export function useEpisodeFiles({ server, id }) {
-  const results = useHandleConsumetResponse(
+  const results = handleConsumetResponse(
     "/watch/",
     server && id ? `${id}?server=${server.id}` : null
   );
-
-  return {
-    sources: results.data?.sources,
-    isLoading: results.isLoading,
-    isError: results.isError,
-  };
+  if (!results.isLoading && results.data) {
+    return {
+      sources: results.data.sources,
+      isLoading: results.isLoading,
+    };
+  } else {
+    return { isLoading: results.isLoading };
+  }
 }
-
 
