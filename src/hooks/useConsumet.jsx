@@ -1,18 +1,25 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { servers } from "../api/gogoanime_servers";
-function handleConsumetResponse(endpoint, parameter) {
+
+// Define a custom hook for handling API consumption and responses
+export const useHandleConsumetResponse = (endpoint, parameter) => {
   const BASE_URL = "https://api.consumet.manjotbenipal.xyz/anime/gogoanime";
-  const results = useQuery(`${endpoint}${parameter}`, async () => {
+  // Use the 'useQuery' hook to fetch data from the specified API endpoint
+  const results = useQuery(${endpoint}${parameter}, async () => {
     if (parameter) {
       return await axios
-        .get(`${BASE_URL}${endpoint}${parameter}`)
+        .get(${BASE_URL}${endpoint}${parameter})
         .catch((err) => console.log(err));
     }
   });
+
+  // If there's no parameter provided, return an object indicating loading state
   if (!parameter) {
     return { isLoading: true };
   }
+
+   // Return an object containing loading state, error state, and the retrieved data
   return {
     isLoading: results.isLoading,
     isError: results.isError,
@@ -21,14 +28,13 @@ function handleConsumetResponse(endpoint, parameter) {
 }
 
 /**
- *
- * @param  name
+ * Search for anime by name using the API.
+ * @param  name - The name of the anime to search for.
  * @returns an object containing loading and error states from the query and data retrieved
  */
 
 export function useSearch(name) {
-  const searchResults = handleConsumetResponse("/", name.toLowerCase());
-  console.log(name.toLowerCase());
+  const searchResults = useHandleConsumetResponse("/", name);
   const results = searchResults.data?.results;
 
   let subAnime, dubAnime;
@@ -48,7 +54,7 @@ export function useSearch(name) {
       subAnime = results[0];
     }
   }
-  console.log(results);
+
   if (results?.length > 1) {
     const suffix_0 = results[0].id.slice(
       results[0].id.length - 3,
@@ -69,14 +75,17 @@ export function useSearch(name) {
      */
     if (suffix_0 !== "dub") {
       subAnime = results[0];
-
-      dubAnime =
-        results.find((el) => el.id === subAnime.id + "-dub") || results[1];
+      if (
+        results[1].id.slice(results[1].id.length - 3, results[1].id.length) ===
+        "dub"
+      ) {
+        dubAnime = results[1];
+      } else {
+        dubAnime = null;
+      }
     } else if (suffix_0 === "dub") {
       dubAnime = results[0];
-      subAnime = results.find(
-        (el) => (el.id = dubAnime.id.slice(0, dubAnime.id.length - 4))
-      );
+      subAnime = null;
     }
   }
   if (!searchResults.isLoading) {
@@ -90,17 +99,21 @@ export function useSearch(name) {
 }
 
 export function useAnimeInfo(id) {
-  const results = handleConsumetResponse(`/info/`, id);
+   // Use the 'useHandleConsumetResponse' function to fetch anime information.
+  const results = useHandleConsumetResponse(/info/, id);
+    // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     return results.data;
   }
 }
 export function useServers(episodeId) {
-  const results = handleConsumetResponse(`/servers/`, episodeId);
-
+    // Use the 'useHandleConsumetResponse' function to fetch available servers.
+  const results = useHandleConsumetResponse(/servers/, episodeId);
+  // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     const usableServers = [];
 
+     // Iterate through the 'servers' list and match with available server data.
     for (let i = 0; i < servers.length; i++) {
       for (let j = 0; j < results.data.length; j++) {
         if (servers[i].name === results.data[j].name) {
@@ -108,16 +121,19 @@ export function useServers(episodeId) {
         }
       }
     }
-
+   // Return the list of usable servers.
     return usableServers;
   }
 }
 
+// * Fetch episode files for a specific server and episode ID.
 export function useEpisodeFiles({ server, id }) {
-  const results = handleConsumetResponse(
+   // Use the 'useHandleConsumetResponse' function to fetch episode files.
+  const results = useHandleConsumetResponse(
     "/watch/",
-    server && id ? `${id}?server=${server.id}` : null
+    server && id ? ${id}?server=${server.id} : null
   );
+   // Check if data has loaded successfully and if there's data available.
   if (!results.isLoading && results.data) {
     return {
       sources: results.data.sources,
@@ -127,4 +143,3 @@ export function useEpisodeFiles({ server, id }) {
     return { isLoading: results.isLoading };
   }
 }
-
