@@ -1,10 +1,12 @@
-import axios from "axios";
+import axios from "axios";  
 import { useQuery } from "react-query";
 import { servers } from "../api/gogoanime_servers";
 
 // Define a custom hook for handling API consumption and responses
 export const useHandleConsumetResponse = (endpoint, parameter) => {
-  const BASE_URL = "https://api.consumet.manjotbenipal.xyz/anime/gogoanime";
+  const BASE_URL = 'https://api.consumet.org/anime/gogoanime/servers/";
+  // 'https://api.consumet.org/anime/gogoanime/servers/'
+
   // Use the 'useQuery' hook to fetch data from the specified API endpoint
   const results = useQuery(${endpoint}${parameter}, async () => {
     if (parameter) {
