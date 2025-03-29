@@ -4,7 +4,7 @@ import { servers } from "../api/gogoanime_servers";
 
 // Define a custom hook for handling API consumption and responses
 export const useHandleConsumetResponse = (endpoint, parameter) => {
-  const BASE_URL = "https://api.consumet.manjotbenipal.xyz/anime/gogoanime";
+  const BASE_URL = "https://api.consumet.org/anime/gogoanime/watch/spy-x-family-episode-1";
   // 'https://api.consumet.org/anime/gogoanime/servers/'
 
   // Use the 'useQuery' hook to fetch data from the specified API endpoint
